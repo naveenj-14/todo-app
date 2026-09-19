@@ -1,0 +1,387 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1f2937;
+  background: #f3f6fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #eef4ff 0%, #f6f7fb 100%);
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 16px;
+}
+
+.auth-page {
+  align-items: center;
+}
+
+.auth-card, .app-card {
+  width: min(100%, 760px);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  padding: 28px;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  margin-bottom: 8px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.topbar p {
+  color: #64748b;
+  margin-bottom: 0;
+}
+
+.user-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+}
+
+.auth-toggle {
+  display: inline-flex;
+  background: #eef2ff;
+  border-radius: 12px;
+  padding: 6px;
+  margin: 20px 0 24px;
+}
+
+.tab {
+  border: none;
+  background: transparent;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.tab.active {
+  background: #fff;
+  color: #111827;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+}
+
+.auth-form,
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+  color: #334155;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #dbe1ec;
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #5b8def;
+  box-shadow: 0 0 0 4px rgba(91, 141, 239, 0.12);
+}
+
+.primary-btn,
+.secondary-btn,
+.danger-btn,
+.chip-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 600;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #2f6fed, #4f8cff);
+  color: #fff;
+}
+
+.secondary-btn {
+  background: #edf3ff;
+  color: #2249a1;
+}
+
+.danger-btn {
+  background: #ffe7e7;
+  color: #b42318;
+}
+
+.chip-btn {
+  background: #eef2ff;
+  color: #1f3bb3;
+}
+
+.chip-btn.selected {
+  background: #dfe9ff;
+  border: 1px solid #8bb1ff;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.danger-btn:hover,
+.chip-btn:hover {
+  transform: translateY(-1px);
+}
+
+.primary-btn:disabled,
+.secondary-btn:disabled,
+.danger-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.todo-section {
+  margin-top: 28px;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 18px 16px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+}
+
+.todo-item.completed {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.todo-main {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.checkbox-wrap {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+}
+
+.checkbox-wrap input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+}
+
+.checkmark {
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  border: 2px solid #94a3b8;
+  background: #fff;
+}
+
+.checkbox-wrap input:checked + .checkmark {
+  background: #16a34a;
+  border-color: #16a34a;
+}
+
+.checkbox-wrap input:checked + .checkmark::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.todo-copy {
+  flex: 1;
+}
+
+.todo-copy h3 {
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+.todo-copy p {
+  margin-bottom: 8px;
+  color: #475569;
+}
+
+.muted {
+  color: #94a3b8 !important;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  background: #eef2ff;
+  color: #3b5cc6;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.todo-item.completed .status-badge {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.state-text {
+  color: #475569;
+  font-weight: 500;
+}
+
+.empty-state {
+  padding: 18px 0;
+}
+
+.banner-message {
+  margin-top: 18px;
+  background: #eef8ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.donation-wrap {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.donation-wrap > p {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.donation-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.donation-input-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.donation-input-row input {
+  flex: 1;
+}
+
+@media (max-width: 640px) {
+  .auth-card,
+  .app-card {
+    padding: 18px;
+  }
+
+  .topbar,
+  .todo-item,
+  .donation-input-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .todo-actions {
+    width: 100%;
+  }
+
+  .todo-actions button,
+  .donation-input-row button {
+    width: 100%;
+  }
+}
