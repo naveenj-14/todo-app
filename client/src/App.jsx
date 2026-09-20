@@ -329,7 +329,7 @@ function App() {
 
   return (
     <div className="page-shell">
-      <div className="app-card">
+        <div className="app-card">
         <header className="topbar">
           <div>
             <h1>Simple Todo</h1>
@@ -373,7 +373,7 @@ function App() {
             loading={donating}
           />
         </section>
-      </div>
+        </div>
     </div>
   );
 }
